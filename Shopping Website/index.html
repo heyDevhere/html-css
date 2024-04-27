@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,initial -scal=1.0">
+    <title>Shopping Website</title>
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/lightslider.css">
+    <script src="JS/Jquery.js"></script>
+    <script src="JS/lightslider.js"></script>
+    <link rel="shortcut icon" href="images/fav-icon.png" />
+    <script src="https://kit.fontawesome.com/c78ed9f1ff.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav>
+        <div class="social-call">
+            <div class="social">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="phone">
+                <span>call +91 8076117385</span>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="navigation">
+        <a href="#" class="logo">
+            <img src="images/final.PNG" style="height: 56px; width: 171px;">
+            <!-- <img src="images/saverss.png" alt=""> -->
+        </a>
+
+        <div class="toggle">
+
+        </div>
+
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Men</a>
+                <span class="sale-label">Sale</span>
+            </li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Shop</a></li>
+        </ul>
+
+        <div class="right-menu">
+            <a href="javascript:void(0)" class="search">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="javascript:void(0);" class="user">
+                <i class="far fa-user"></i>
+            </a>
+            <a href="#">
+                <i class="fas fa-shopping-cart">
+                    <span class="num-cart-product">0</span>
+                </i>
+            </a>
+        </div>
+    </div>
+
+    <div class="search-bar">
+        <div class="search-input">
+            <input type="text" placeholder="Search For Product" />
+            <a href="javascript:void(0);" class="search-cancel"><i class="fas fa-times"></i></a>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).on('click', '.search', function () {
+            $('.search-bar').addClass('search-bar-active')
+        });
+
+        $(document).on('click', '.search-cancel', function () {
+            $('.search-bar').removeClass('search-bar-active')
+        });
+
+        $(document).on('click', '.user,.already-account', function () {
+            $('.form').addClass('login-active').removeClass('sign-up-active')
+        });
+
+        $(document).on('click', '.sign-up-btn', function () {
+            $('.form').addClass('sign-up-active').removeClass('login-active');
+        });
+
+        $(document).on('click', '.form-cancel', function () {
+            $('.form').removeClass('login-active').removeClass('sign-up-active')
+        });
+
+        $(document).ready(function () {
+            $('#adaptive').lightSlider({
+                adaptiveHeight: true,
+                auto: true,
+                item: 1,
+                slideMargin: 0,
+                loop: true
+            });
+        });
+
+        $(document).ready(function () {
+            $('#autoWidth').lightSlider({
+                autoWidth: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#autoWidth').removeClass('cS-hidden');
+                }
+            });
+        });
+
+        $(window).scroll(function(){
+            if($(document).scrollTop()>50){
+                $('.navigation').addClass('fix-nav');
+            }
+            else{
+                $('.navigation').removeClass('fix-nav');
+            }
+        });
+
+        $(document).ready(function(){
+           $('.toggle').click(function(){
+             $('.toggle').toggleClass('active');
+             $('.navigation').toggleClass('active')
+           })
+        });
+
+    </script>
+
+    <div class="form">
+        <div class="login-form">
+            <a href="javascript:void(0);" class="form-cancel"><i class="fas fa-times"></i></a>
+            <strong>Log In</strong>
+            <form>
+                <input type="email" placeholder="Example@gmail.com" name="email" required>
+                <input type="password" placeholder="password" name="password" required>
+                <input type="submit" value="Log In">
+            </form>
+            <div class="form-btns">
+                <a href="#" class="forget">Forget your password</a>
+                <a href="javascript:void(0);" class="sign-up-btn">Create Account</a>
+            </div>
+        </div>
+
+        <div class="sign-up-form">
+            <a href="javascript:void(0);" class="form-cancel"><i class="fas fa-times"></i></a>
+            <strong>Sign Up</strong>
+            <form>
+                <input type="text" placeholder="Full Name" name="fullname" required>
+                <input type="email" placeholder="Example@gmail.com" name="email" required>
+                <input type="password" placeholder="password" name="password" required>
+                <input type="submit" value="Sign up">
+            </form>
+            <div class="form-btns">
+                <a href="javascript:void(0);" class="already-account">Already Have Account</a>
+            </div>
+        </div>
+    </div>
+
+    <ul id="adaptive" class="cs-hidden">
+        <li class="item-a">
+            <div class="full-slider-box f-slide-1">
+                <div class="slider-text-contanor">
+                    <div class="f-slider-text">
+                        <span>Limited offer</span>
+                        <strong>40% off <br> with <font>promo code</font></strong>
+                        <a href="#" class="f-slider-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li class="item-a">
+            <div class="full-slider-box f-slide-2">
+                <div class="slider-text-contanor">
+                    <div class="f-slider-text">
+                        <span>Customized Hack TEE Shirt</span>
+                        <span>Limited offer</span>
+                        <strong>40% off <br> with <font>promo code</font></strong>
+                        <a href="#" class="f-slider-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li class="item-a">
+            <div class="full-slider-box f-slide-3">
+                <div class="slider-text-contanor">
+                    <div class="f-slider-text">
+                        <span>Limited offer</span>
+                        <strong>40% off <br> with <font>promo code</font></strong>
+                        <a href="#" class="f-slider-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="feature-heading">
+        <h2>Featured Categories</h2>
+    </div>
+
+    <ul id="autoWidth" class="cs-hidden">
+        <li class="item">
+            <div class="feature-box">
+                <a href="#">
+                    <img src="images/feature_1.jpg" alt="">
+                </a>
+            </div>
+            <span>T-Shirt For Men</span>
+        </li>
+        <li class="item">
+            <div class="feature-box">
+                <a href="#">
+                    <img src="images/feature_2.jpg" alt="">
+                </a>
+            </div>
+            <span>T-Shirt For Women</span>
+        </li>
+        <li class="item">
+            <div class="feature-box">
+                <a href="#">
+                    <img src="images/feature_3.jpg" alt="">
+                </a>
+            </div>
+            <span>T-Shirt For Kids</span>
+        </li>
+        <li class="item">
+            <div class="feature-box">
+                <a href="#">
+                    <img src="images/feature_4.jpg" alt="">
+                </a>
+            </div>
+            <span>Meusic Cushion</span>
+        </li>
+        <li class="item">
+            <div class="feature-box">
+                <a href="#">
+                    <img src="images/feature_5.jpg" alt="">
+                </a>
+            </div>
+            <span>Meusic Covers</span>
+        </li>
+        <li class="item">
+            <div class="feature-box">
+                <a href="#">
+                    <img src="images/feature_6.jpg" alt="">
+                </a>
+            </div>
+            <span>Meusic Bags</span>
+        </li>
+    </ul>
+
+    <section class="new-arrival">
+        <div class="arrival-heading">
+            <strong>Feature items</strong>
+            <p>Meusically Designed Style.Hot Trends.Shop Now!</p>
+        </div>
+
+        <div class="product-contanor">
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-1.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">Cyber Punk T-Shirt</a>
+                    <span class="p-price">$22.00</span>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-2.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">Data Dasher Shirt</a>
+                    <span class="p-price">$25.00</span>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-3.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">Meusically Merch</a>
+                    <span class="p-price">$40.00</span>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-4.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">Byte Boss Cover</a>
+                    <span class="p-price">$56.00</span>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-5.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">CodeCrypt Enigma Jacket</a>
+                    <span class="p-price">$89.00</span>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-6.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">BinaryBlade Cyber Jacket</a>
+                    <span class="p-price">$200.00</span>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-7.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">NeuroLink Hack Jacket</a>
+                    <span class="p-price">$108.00</span>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-8.png"  />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">ShadowByte CipherCoat</a>
+                    <span class="p-price">$300.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sale">
+        <div class="sale-box">
+            <img src="images/sale-1.jpg" alt="">
+            <a href="#">
+                <div class="sale-text">
+                    <strong>Bag With Meusic Goodies</strong>
+                    <span>Sale off 25%</span>
+                </div>
+            </a>
+        </div>
+        <div class="sale-box">
+            <img src="images/sale-2.jpg" alt="">
+            <a href="#">
+                <div class="sale-text">
+                    <strong>Hack Haven Pillows</strong>
+                    <span>Sale off 10%</span>
+                </div>
+            </a>
+        </div>
+        <div class="sale-box">
+            <img src="images/sale-3.jpg" alt="">
+            <a href="#">
+                <div class="sale-text">
+                    <strong>HackFest Fiesta Cushions</strong>
+                    <span>Sale off 20%</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="new-arrival">
+        <div class="arrival-heading">
+            <strong>New Arrival</strong>
+            <p>Get in Vogue.Discover Latest Fashion</p>
+        </div>
+
+        <div class="product-contanor">
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-1.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">Cyber Punk T-Shirt</a>
+                    <span class="p-price">$22.00</span>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-2.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">Data Dasher Shirt</a>
+                    <span class="p-price">$25.00</span>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-3.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">Meusically Merch</a>
+                    <span class="p-price">$40.00</span>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-img">
+                    <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <img src="images/p-4.png" />
+                </div>
+
+                <div class="product-details">
+                    <a href="#" class="p-name">Byte Boss Cover</a>
+                    <span class="p-price">$56.00</span>
+                </div>
+            </div>
+</div>
+</section>
+<div class="banner-box f-slide-3">
+    <div class="banner-text-contanor">
+        <div class="banner-text">
+            <span>Limited offer</span>
+            <strong>40% off <br> with <font>promo code</font></strong>
+            <a href="#" class="banner-btn">Shop Now</a>
+        </div>
+    </div>
+</div>
+
+<section class="services">
+    <div class="services-box" style="cursor: pointer;">
+        
+        <i class="fas fa-shipping-fast" style="cursor: pointer;"></i>
+        <span style="cursor: pointer;">Free Shipping </span>
+        <p style="cursor: pointer;">Free Shipping For all US orders</p>
+    </div>
+    <div class="services-box" style="cursor: pointer;">
+        <i class="fas fa-headphones-alt" style="cursor: pointer;"></i>
+        <span style="cursor: pointer;">Support 24/7</span>
+        <p style="cursor: pointer;">We support 24h a day</p>
+    </div>
+    <div class="services-box" style="cursor: pointer;">
+        <i class="fas fa-sync" style="cursor: pointer;"></i>
+        <span style="cursor: pointer;">100% Money Back</span>
+        <p style="cursor: pointer;">You have 30 days to Return</p>
+    </div>
+</section>
+
+<footer>
+    <span class="copyright">
+        Copyright 2023 - GoingToInternet
+    </span>
+    <div class="subscribe">
+        <form>
+            <input type="email" placeholder="example@gmail.com" required/>
+            <input type="submit" style="cursor: pointer;" value="Subscribe">
+        </form>
+    </div>
+</footer>
+
+
+
+
+
+
+</body>
+
+</html>
